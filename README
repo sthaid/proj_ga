@@ -92,9 +92,9 @@ Genimg
 ------
 
 This program generates random base images and variations of each base image. The
-random base images are made up of different colored shapes. The variation images 
-are created by perturbing the base image. The perturbation shifts the base image 
-by 1 pixel either up, down, left, or right. The variation images also have a few 
+random base images are made up of different colored shapes. The variation images
+are created by perturbing the base image. The perturbation shifts the base image
+by 1 pixel either up, down, left, or right. The variation images also have a few
 pixels set at random.
 
 The image files are created in the current working directory. Since many image 
@@ -155,8 +155,8 @@ Commands:
   . verbose:                  set to 1 to make program output more verbose
   . crossover_rate_percent:   affects the creation of the next generation 
   . learn_term_org_score_avg: terminate learn command when this score is reached
-  . learn_term_gen_count:     terminate learn command when this number of generation
-                              is processed
+  . learn_term_gen_count:     terminate learn command when this number of 
+                              generation is processed
   . test_max_org:             number of organisms tested by the test command
 
 - create <params describing population and organisms>
@@ -181,15 +181,15 @@ Commands:
   . max_neuron_lvl1 (30)    levels of each organism's neural net.
   . max_neuron_lvl2 (0)     
   . max_incorrect_neuron_cnt_lvl0 (30): The maximum number of neurons that can be
-  . max_incorrect_neuron_cnt_lvl1 (8)   incorrect, and still provide correct image
-  . max_incorrect_neuron_cnt_lvl2 (0)   identification.
+  . max_incorrect_neuron_cnt_lvl1 (8)   incorrect, and still provide correct 
+  . max_incorrect_neuron_cnt_lvl2 (0)   image identification.
   . image_filename (img/*base.img): The image filenames to be learned.
 
 - learn <neuron_lvl>
 
-  After creating the population the learn command is used to simulate the evolution
-  of the organisms ability (or fitness) to recognize images over multiple 
-  generations.
+  After creating the population the learn command is used to simulate the 
+  evolution of the organisms ability (or fitness) to recognize images over 
+  multiple generations.
 
   The neuron_lvl arg tells the learn command the top neural net level to be
   used. The first time the learn command is issued (following create cmd), the 
@@ -206,8 +206,8 @@ Commands:
   This is done so that subsequent issuance of the test command will test the top 
   scoring organisms.
 
-  The simulation can be continued by re-issuing the learn command, either using the
-  same neuron_lvl or neuron_lvl that is 1 greater than before.
+  The simulation can be continued by re-issuing the learn command, either using 
+  the same neuron_lvl or neuron_lvl that is 1 greater than before.
 
   Additional details are provided in the LEARN ALGORITHM section below
   
@@ -216,9 +216,9 @@ Commands:
   If test is issued without any parameters then the top test_max_org members of
   the population tested  using the images saved in the pop_t data structure. 
 
-  if <filenames.img> is supplied then the organisms are tested using these images 
-  instead of the images stored in the pop_t data structure. An intended use case 
-  is to learn the base images, and test against the variation images.
+  if <filenames.img> is supplied then the organisms are tested using these 
+  images instead of the images stored in the pop_t data structure. An intended 
+  use case is to learn the base images, and test against the variation images.
 
 - display
 
@@ -258,25 +258,27 @@ cmd_create() procedure. Cmd_create allocates memory for the specified population
 size, and the specified neural network configuration of the organisms. Each 
 organism's neural net weights are initialized with random values.
 
-Ga_learn will train one neural net level at a time. The first time ga_learn is called
-zero must be specified for the neuron_lvl. This means that the nn_eval() routine will
-evaluate the neural net at level 0 only; in this case the number of bits in the 
-answer that nn_eval() provides will be the number of neurons defined for level 0.
+Ga_learn will train one neural net level at a time. The first time ga_learn is 
+called zero must be specified for the neuron_lvl. This means that the nn_eval()
+routine will evaluate the neural net at level 0 only; in this case the number 
+of bits in the answer that nn_eval() provides will be the number of neurons 
+defined for level 0.
 
-After neuron_lvl zero is trained, ga_learn can be called for neuron_lvl one. Ga_learn
-will copy the top rated organism's level 0 neurons to all of the other organisms. The
-genetic algorithm will now create children by crossover of the level 1 neurons; the 
-level 0 neurons will remain fixed. If desired, this process can be repeated for the
-level 2 neurons.
+After neuron_lvl zero is trained, ga_learn can be called for neuron_lvl one. 
+Ga_learn will copy the top rated organism's level 0 neurons to all of the other 
+organisms. The genetic algorithm will now create children by crossover of the 
+level 1 neurons; the level 0 neurons will remain fixed. If desired, this 
+process can be repeated for the level 2 neurons.
 
 When scoring the organism's performance, 2 scores are computed for each organism:
 - straight score: this is the number of images correctly identified divided by
   the total number of images in the test (in percent)
-- weighted score: this score differs from the straight score in that it takes into
-  account the confidence the organism has in each answer. The confidence is reduced
-  by incorrect neurons. For example, if training at neuron_lvl 0 with 120 neurons
-  defined for that level, and max_incorrect_neuron_cnt for lvl0 set to 30 then
-  an answer with 6 incorrect neurons would have a weighted score of
+- weighted score: this score differs from the straight score in that it takes 
+  into account the confidence the organism has in each answer. The confidence 
+  is reduced by incorrect neurons. For example, if training at neuron_lvl 0 
+  with 120 neurons defined for that level, and max_incorrect_neuron_cnt for 
+  lvl0 set to 30 then an answer with 6 incorrect neurons would have a 
+  weighted score of
            1 - 6/30 = 0.8 points
 
 The weighted score is used by the 'roulette selection algorithm' in 
@@ -316,9 +318,9 @@ Pseudo Code:
 
         // Create the next generation. Parents pairs are chosen using 
         // 'roulette wheel selection', based on the organisms weighted scores.
-        // For example, an organism with a weighted score of 50 will be 5 times more 
-        // likely to be chosen to be a parent than an organism with weighted score 
-        // of 10.
+        // For example, an organism with a weighted score of 50 will be 5 
+        // times more likely to be chosen to be a parent than an organism 
+        // with weighted score of 10.
         // 
         // Not every organism will be chosen to be a parent, and some organisms
         // will be chosen to be parent multiple times. When an organism is chosen
@@ -332,9 +334,9 @@ Pseudo Code:
         //
         // The default crossover rate is 70%. This means that when children are
         // created from the parents: 
-        // - there is a 30% chance that the children will be identical to the parents,
-        //   that is child1 will be identical to parent1, and child2 will be identical
-        //   to parent2
+        // - there is a 30% chance that the children will be identical to the 
+        //   parents, that is child1 will be identical to parent1, and child2 
+        //   will be identical to parent2
         // - there is a 70% chance that the children's chromosomes will be a 
         //   combination of their parent's chromosomes
         ga_learn_create_next_gen()
@@ -343,8 +345,8 @@ Pseudo Code:
         // that have been simulated for this population at this neuron_lvl
         pop->pop->gen_num = gen_num + 1
 
-        // Increment generation count, this is the count of simulated generations
-        // processed by this call to ga_learn.
+        // Increment generation count, this is the count of simulated 
+        // generations processed by this call to ga_learn.
         gen_count = gen_count + 1
     endwhile
 
@@ -366,8 +368,8 @@ Notes:
 RESULTS
 ================================================
 
-The following summarized results are obtained from run of the included 'script' file.
-The output from ga's run of script is in results.txt.
+The following summarized results are obtained from run of the included 'script'
+file.  The output from ga's run of script is in results.txt.
    $ ./ga | tee results.txt
    > script script
 
