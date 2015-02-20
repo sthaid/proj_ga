@@ -1,0 +1,391 @@
+Title:  Genetic Algorithm - Image Recognition
+
+Author: Steven Haid
+Email:  stevenhaid@gmail.com
+Date:   February 19, 2015
+
+================================================
+TABLE OF CONTENTS
+================================================
+
+- INTRODUCTION
+- LICENSE
+- REFERENCES
+- BUILDING THE SOFTWARE
+- IMAGE GENERATION
+  . Genimg
+  . Catimg
+- GENETIC ALGORITHM
+  . Program Usage
+  . Learn Algorithm
+- RESULTS
+
+================================================
+INTRODUCTION
+================================================
+
+The goal of this project is to utilize neural network and genetic learning
+algorithm such that a simulated population of organisms learns to recognize
+images.
+
+================================================
+LICENSE
+================================================
+
+Copyright (c) 2015 Steven Haid
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================
+REFERENCES
+================================================
+
+- http://www.ai-junkie.com/
+  Introduction to Artificial Intelligence.
+
+- http://en.wikipedia.org/wiki/Artificial_neural_network
+  Wikipedia - Artificial Neural Network
+
+- http://en.wikipedia.org/wiki/Genetic_algorithm
+  Wikipedia - Genetic Algorithm, mimics the process of Natural Selection
+
+================================================
+BUILDING THE SOFTWARE
+================================================
+
+My development system is running 64 bit Fedora 20; 
+hardware has 4 cores, 8 GB memory, and 1 TB hard disk.
+Multiple cores is recommended to reduce the run time.
+
+Prerequisites:
+  yum install -y readline-devel zlib-devel
+
+Build:
+  make
+
+Make should have created 3 programs:
+  genimg: generates random images
+  catimg: view the images
+  ga:     genetic algorithm population simulation
+
+================================================
+IMAGE GENERATION
+================================================
+
+Genimg
+------
+
+This program generates random base images and variations of each base image. The
+random base images are made up of different colored shapes. The variation images 
+are created by perturbing the base image. The perturbation shifts the base image 
+by 1 pixel either up, down, left, or right. The variation images also have a few 
+pixels set at random.
+
+The image files are created in the current working directory. Since many image 
+files may be created it is best to run this program in an 'img' directory.
+
+Usage:
+  genimg <max_base_image> <max_variation>
+
+For example:
+  $ mkdir img
+  $ cd img
+  $ ../genimg 1000 1
+  Creating 1000 base images, each with 1 variation images.
+
+  $ /bin/ls -1 | head
+  img00000-base.img
+  img00000-var1.img
+  img00001-base.img
+  img00001-var1.img
+      ...
+
+Catimg
+------
+
+This program displays the images in an xterm window. 
+Escape sequences are used to show pixel color.
+
+Usage:
+  catimg <file1.img> <file2.img> ...
+
+For example, to view img00000 and all of it's variations:
+  ../catimg img00000*
+
+  This displays img00000 base first, followed by img00000 variations.
+
+================================================
+GENETIC ALGORITHM
+================================================
+
+The ga program contains the genetic algorithm and neural network used to
+simulate the evolution of a population of organisms over multiple generations.
+A fitness function is used to steer the evolution, as in natural selection.
+
+Program Usage
+-------------
+
+Start the program 'ga', there are no args
+  $ ./ga
+  > 
+
+Commands:
+- set <name> <value>
+
+  The set command is used to view or change program global settings.
+  When issued without args, the current settings are displayed.
+
+  The global parameters are:
+  . verbose:                  set to 1 to make program output more verbose
+  . crossover_rate_percent:   affects the creation of the next generation 
+  . learn_term_org_score_avg: terminate learn command when this score is reached
+  . learn_term_gen_count:     terminate learn command when this number of generation
+                              is processed
+  . test_max_org:             number of organisms tested by the test command
+
+- create <params describing population and organisms>
+
+  The create command will create a new population of organisms. An existing
+  population, if any, is removed first. The amount of memory used to store the
+  new population is printed. The amount of memory needed is influenced by the
+  number of organisms in the population, and the number of neurons per organism.
+
+  The <params describing population and organisms> can be provided following 
+  'create', or if not supplied, they will be prompted for. When being prompted
+  for, the default value is shown and the default value can be used
+  by entering a blank line. Using the default values is a good place to start.
+
+  When a population is created, the organisms are initialized with random 
+  chromosome; every neuron in an organism is made up of chromosomes. Therefore 
+  the initial fitness of each organism to recognize images is very low.
+
+  The parameters, and their default values:
+  . max_org (500) : Number of organisms in the population.
+  . max_neuron_lvl0 (128) : The number of neurons at each of the 3 supported
+  . max_neuron_lvl1 (30)    levels of each organism's neural net.
+  . max_neuron_lvl2 (0)     
+  . max_incorrect_neuron_cnt_lvl0 (30): The maximum number of neurons that can be
+  . max_incorrect_neuron_cnt_lvl1 (8)   incorrect, and still provide correct image
+  . max_incorrect_neuron_cnt_lvl2 (0)   identification.
+  . image_filename (img/*base.img): The image filenames to be learned.
+
+- learn <neuron_lvl>
+
+  After creating the population the learn command is used to simulate the evolution
+  of the organisms ability (or fitness) to recognize images over multiple 
+  generations.
+
+  The neuron_lvl arg tells the learn command the top neural net level to be
+  used. The first time the learn command is issued (following create cmd), the 
+  neuron_lvl must be 0; this means that just neural net level 0 is used, and that
+  the neurons allocated to the higher levels are not used. Following running the
+  learn command at level 0, the learn command can then be run at level 1.
+
+  The learn command will continue the simulation until one of the following 
+  terminating conditions is met:
+  - The average organism score exceeds learn_term_org_score_avg.
+  - The number of generations simulated has reached learn_term_gen_count.
+
+  When the learn command completes, the organisms are sorted based on their score.
+  This is done so that subsequent issuance of the test command will test the top 
+  scoring organisms.
+
+  The simulation can be continued by re-issuing the learn command, either using the
+  same neuron_lvl or neuron_lvl that is 1 greater than before.
+
+  Additional details are provided in the LEARN ALGORITHM section below
+  
+- test [<filenames.img>]
+
+  If test is issued without any parameters then the top test_max_org members of
+  the population tested  using the images saved in the pop_t data structure. 
+
+  if <filenames.img> is supplied then the organisms are tested using these images 
+  instead of the images stored in the pop_t data structure. An intended use case 
+  is to learn the base images, and test against the variation images.
+
+- display
+
+  This command displays fields of the pop_t data structure.
+
+- script <script_filename>
+
+  Execute commands from script_filename. A sample 'script' file is included.
+
+- read <filename.pop>
+- write <filename.pop>
+
+  If the learn command is being processed for a large population and/or a large 
+  number of images it can take quite some time to complete. 
+
+  The purpose of the write and read commands is to save / restore the pop_t data 
+  structure to a disk file. The contents of the pop_t data structure contains 
+  everything needed to pick up from where you left off.
+
+- shell <command>
+
+  Executes the command by calling '/bin/sh -c command'.
+  
+- q or ^d
+
+  Exit program.
+
+Learn Algorithm 
+---------------
+
+The core functionality of the ga program is performed by the ga_learn() procedure,
+which simulates the population of organisms learning to recognize images over
+successive generations.
+
+Prior to ga_learn being called, the population ('pop') must be initialized by the
+cmd_create() procedure. Cmd_create allocates memory for the specified population
+size, and the specified neural network configuration of the organisms. Each 
+organism's neural net weights are initialized with random values.
+
+Ga_learn will train one neural net level at a time. The first time ga_learn is called
+zero must be specified for the neuron_lvl. This means that the nn_eval() routine will
+evaluate the neural net at level 0 only; in this case the number of bits in the 
+answer that nn_eval() provides will be the number of neurons defined for level 0.
+
+After neuron_lvl zero is trained, ga_learn can be called for neuron_lvl one. Ga_learn
+will copy the top rated organism's level 0 neurons to all of the other organisms. The
+genetic algorithm will now create children by crossover of the level 1 neurons; the 
+level 0 neurons will remain fixed. If desired, this process can be repeated for the
+level 2 neurons.
+
+When scoring the organism's performance, 2 scores are computed for each organism:
+- straight score: this is the number of images correctly identified divided by
+  the total number of images in the test (in percent)
+- weighted score: this score differs from the straight score in that it takes into
+  account the confidence the organism has in each answer. The confidence is reduced
+  by incorrect neurons. For example, if training at neuron_lvl 0 with 120 neurons
+  defined for that level, and max_incorrect_neuron_cnt for lvl0 set to 30 then
+  an answer with 6 incorrect neurons would have a weighted score of
+           1 - 6/30 = 0.8 points
+
+The weighted score is used by the 'roulette selection algorithm' in 
+ga_learn_create_next_gen() when choosing which organisms will be the parents of 
+the children that will make up the next generation.
+
+Pseudo Code:
+
+    // Loop over successive generations.
+    while true
+        // Give every organism the image recognition test; each organism will
+        // provide an answer for every image, by call to nn_eval.
+        ga_test_give()
+
+        // Score the test using the current answer key (pop->answer[]).
+        // When scoring the test, both the straight and weighted scores are 
+        // calculated.
+        ga_test_score()
+
+        // If this is less than the fifth generation then the answer key
+        // will be changed to pick the most common answer. Essentially this is
+        // letting the early generations decide what to call the images.
+        // Following the changed answer key, the organisms test scores are
+        // recalculated.
+        if (pop->gen_num < 5) then
+            ga_learn_choose_best_answers()
+            ga_test_score()
+        endif
+
+        // Check for terminate condition. The default terminate condition is
+        // a) average straight score is greater than 95%, or
+        // b) 10 generations have been simulated.
+        // The 'set' command can be used to change these termination criteria.
+        if (terminate criteria met) then
+            break out of while loop
+        endif
+
+        // Create the next generation. Parents pairs are chosen using 
+        // 'roulette wheel selection', based on the organisms weighted scores.
+        // For example, an organism with a weighted score of 50 will be 5 times more 
+        // likely to be chosen to be a parent than an organism with weighted score 
+        // of 10.
+        // 
+        // Not every organism will be chosen to be a parent, and some organisms
+        // will be chosen to be parent multiple times. When an organism is chosen
+        // to be parent multiple times, it is likely that it will be paired with
+        // a different organism each time.
+        // 
+        // The number of parent pairs chosen is equal to the maximum number of
+        // organisms at which the population is configured divide by 2.
+        // Each parent pair will generate 2 children, thus the number of organisms
+        // in successive generations will remain the same.
+        //
+        // The default crossover rate is 70%. This means that when children are
+        // created from the parents: 
+        // - there is a 30% chance that the children will be identical to the parents,
+        //   that is child1 will be identical to parent1, and child2 will be identical
+        //   to parent2
+        // - there is a 70% chance that the children's chromosomes will be a 
+        //   combination of their parent's chromosomes
+        ga_learn_create_next_gen()
+
+        // Increment generation number, this is the total number of generations
+        // that have been simulated for this population at this neuron_lvl
+        pop->pop->gen_num = gen_num + 1
+
+        // Increment generation count, this is the count of simulated generations
+        // processed by this call to ga_learn.
+        gen_count = gen_count + 1
+    endwhile
+
+    // Sort organisms based on their weighted score.
+    ga_learn_sort_orgs()
+
+    // done
+    return
+
+Notes:
+- Earlier implementations included mutation of chromosomes (in 
+  ga_learn_create_children). However this did not improve performance, 
+  and was removed from the code
+
+- Earlier implementations included neuron bias values (in nn_eval()).
+  However this did not improve performance, and was removed from the code
+
+================================================
+RESULTS
+================================================
+
+The following summarized results are obtained from run of the included 'script' file.
+The output from ga's run of script is in results.txt.
+   $ ./ga | tee results.txt
+   > script script
+
+Results are summarized in the following table.
+Note: SCORE is MAX Straight Score, in percent.
+
+                NEURON_LVL 0                NEURON_LVL 1
+            BASE        VARIATION       BASE        VARIATION
+            IMAGES      IMAGES          IMAGES      IMAGES
+IMAGES      SCORE       SCORE           SCORE       SCORE
+------      -----       -----           -----       -----
+100         100         100             100          24
+1000        100          99              99           9
+10000       100          98              99           3
+
+These results indicate that a single level of neurons performs better, at image
+recognition, than a 2 level neural network.
+
+I would like to add that there are probably better ways to implement and train a 
+neural network that would likely perform better than what I have done here.
+

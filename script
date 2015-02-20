@@ -1,0 +1,50 @@
+set test_max_org 10
+
+remark #######################################
+remark #### STARTING TEST WITH 100 IMAGES ####
+remark #######################################
+shell rm -rf img; mkdir img; cd img; ../genimg 100 1
+create 500  128 40 0   30 10 0  img/*base.img
+set learn_term_gen_count 15
+learn 0
+test img/*base.img
+test img/*var*.img
+set learn_term_gen_count 5
+learn 1
+test img/*base.img
+test img/*var*.img
+remark
+
+remark #######################################
+remark #### STARTING TEST WITH 1000 IMAGES ####
+remark #######################################
+shell rm -rf img; mkdir img; cd img; ../genimg 1000 1
+create 500  128 40 0   30 10 0  img/*base.img
+set learn_term_gen_count 15
+learn 0
+test img/*base.img
+test img/*var*.img
+set learn_term_gen_count 5
+learn 1
+test img/*base.img
+test img/*var*.img
+remark
+
+remark #######################################
+remark #### STARTING TEST WITH 10000 IMAGES ####
+remark #######################################
+shell rm -rf img; mkdir img; cd img; ../genimg 10000 1
+create 500  128 40 0   30 10 0  img/*base.img
+set learn_term_gen_count 15
+learn 0
+test img/*base.img
+test img/*var*.img
+set learn_term_gen_count 5
+learn 1
+test img/*base.img
+test img/*var*.img
+remark
+
+remark ##############
+remark #### DONE ####
+remark ##############

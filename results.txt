@@ -1,0 +1,1401 @@
+[?1034h> script script
+ script> set test_max_org 10
+ script> 
+ script> remark #######################################
+ script> remark #### STARTING TEST WITH 100 IMAGES ####
+ script> remark #######################################
+ script> shell rm -rf img; mkdir img; cd img; ../genimg 100 1
+Creating 100 base images, each with 1 variation images.
+ script> create 500  128 40 0   30 10 0  img/*base.img
+sizeof pop_t   631 MB
+sizeof score_t 883 MB (for max of 100000 imgaes)
+completed read of 100 image files
+completed adding images to pop: new=100 existing=0 skipped=0
+02/18 08:16 - 0 100 500 - -1 128 40 0 30 10 0 img/*base.img - create successful
+ script> set learn_term_gen_count 15
+ script> learn 0
+Initializing learn for 0 neuron levels
+alloced score, size 25 MB
+
+02/18 08:16 - 0 100 500 - 0 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 0, term_org_score_avg 95, term_gen_count 15
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 08:16 - 0 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 2 0 0 ws 2 1 1 - choose_best_ans_ben 0.2
+
+  404 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |XX                                                                                                  
+    0 |XXX                                                                                                 
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  496 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XX                                                                                                 
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 08:16 - 1 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 71 0 0 ws 71 1 1 - choose_best_ans_ben 0.6
+
+  470 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |XXXX  X   X      X  X                                                 XX                            
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  483 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXX               XX                                                  X                            
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 08:16 - 2 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 10 0 ws 100 6 1 - choose_best_ans_ben 2.6
+
+  431 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |XXXX X X  XX XX         X X                 X           X        X   X       X           X        XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  446 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | X X XX  X X         XX  XXXXXXX      X X  X   X  XX  X X   X X         X X          X      XX     X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 08:16 - 3 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 36 0 ws 100 22 1 - choose_best_ans_ben 0.0
+
+  276 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |XX XXXX XX   XX  XXX  X   X X   X X        X       X X     X X X X  XX   XXX X          X  XXXXXXX X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  306 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXXXXXXX  X XXX  X  XXX  XXX XXXXXXXX XX  XXXXXXXXX   X XXXXXX X  XXX XXX XXXXX XX XX   X XX XX XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 4 / 4 -------------------------
+
+02/18 08:16 - 4 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 56 0 ws 100 35 1 - choose_best_ans_ben 0.0
+
+  243 |                                                                                                   X
+      |X                                                                                                  X
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |XXXXXX XXXX  XXX X    XX    X XXX XX XX X   X   X   XX       X   X XX XXX  X XX XXXXXX   XX XX XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  202 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                 X
+    0 | XXXXXXXXXXXX X X XXX X XXXXXXXXXXXXXXX X X XXXXXXXXXXXXX  XXX XXX XXXXXXX XX XXXXXXXXXXXXX XX XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 5 / 5 -------------------------
+
+02/18 08:16 - 5 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 73 0 ws 100 46 1 
+
+  322 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+    0 |XXXXX XX   X  XX      XX X XX X X     X X   XX      X    X XX    XXXX  XX XX  XXXXX  X  X XX X XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  123 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                 X
+      | X                                                                                                 X
+    0 | XXXXXXXXXXXXXX XXXXX XXXXXXX XXXXXXXXXXXXXXXXXXXXX XX XXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXX  XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 6 / 6 -------------------------
+
+02/18 08:16 - 6 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 84 0 ws 100 54 1 
+
+  374 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXX  X X XX X XX  X  X   XX         XX X    X     X XXX  XX     X XXXXXX   XXXX X    XXX X XXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   72 | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                      X                          X
+    0 | XXXXXXXXXXXXXXXX XXXXX XXXXX XXXXXXXXXXXXXXXXXXXXXXXXXX XX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 7 / 7 -------------------------
+
+02/18 08:16 - 7 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 93 0 ws 100 65 1 
+
+  443 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XX X  XX     X   X  X       X   X     XX            X X X        XX X    XXXX  X     XXX XX X XXX XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   93 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+    0 | XXXXXXXXXX XXX  XXX XXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXX  X XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 8 / 8 -------------------------
+
+02/18 08:16 - 8 100 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 97 0 ws 100 70 1 
+
+  468 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XX          X                  X      XX            X          XX        XX  X X  X   XX X  X  XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   96 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXX XXXXXX XXX  X  XXXXXXXXX XX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 08:16 - 8 100 500 - 0 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 97.1 >= 95 - time 19s 88 7 0 0 5
+ script> test img/*base.img
+completed read of 100 image files
+alloced score, size 24 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org            100.0 100.0 100.0
+org_weighted   100.0 100.0 100.0
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0    100.000    100.000     100(0,0.0,0)         0                    0                   
+       1    100.000    100.000     100(0,0.0,0)         0                    0                   
+       2    100.000    100.000     100(0,0.0,0)         0                    0                   
+       3    100.000    100.000     100(0,0.0,0)         0                    0                   
+       4    100.000    100.000     100(0,0.0,0)         0                    0                   
+       6    100.000    100.000     100(0,0.0,0)         0                    0                   
+       7    100.000    100.000     100(0,0.0,0)         0                    0                   
+       8    100.000    100.000     100(0,0.0,0)         0                    0                   
+       9    100.000    100.000     100(0,0.0,0)         0                    0                   
+ script> test img/*var*.img
+completed read of 100 image files
+alloced score, size 24 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org            100.0 100.0 100.0
+org_weighted    40.8  40.9  40.8
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                        X                                                           
+      |                                        X                                                           
+      |                                        X                                                           
+      |                                        X                                                           
+    0 |                                        X                                                           
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     40.850    100.000     100(6,17.8,27)       0                    0                   
+       1     40.850    100.000     100(6,17.8,27)       0                    0                   
+       2     40.850    100.000     100(6,17.8,27)       0                    0                   
+       3     40.850    100.000     100(6,17.8,27)       0                    0                   
+       4     40.850    100.000     100(6,17.8,27)       0                    0                   
+       6     40.850    100.000     100(6,17.8,27)       0                    0                   
+       7     40.850    100.000     100(6,17.8,27)       0                    0                   
+       8     40.850    100.000     100(6,17.8,27)       0                    0                   
+       9     40.850    100.000     100(6,17.8,27)       0                    0                   
+ script> set learn_term_gen_count 5
+ script> learn 1
+Initializing learn for 1 neuron levels
+alloced score, size 25 MB
+
+02/18 08:16 - 0 100 500 - 1 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 1, term_org_score_avg 95, term_gen_count 5
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 08:16 - 0 100 500 - 1 128 40 0 30 10 0 img/*base.img - os 100 81 0 ws 100 81 1 - choose_best_ans_ben 81.0
+
+  405 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+    0 |X                                                                                                  X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  405 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+    0 | X                                                                                                 X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 08:16 - 1 100 500 - 1 128 40 0 30 10 0 img/*base.img - os 100 86 0 ws 100 83 1 - choose_best_ans_ben 0.0
+
+  410 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXX XX  X X X  X X XXX         X XX  XX   XX X  X  X   XX      X     X  X    XX X  X    X XXX  X XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  400 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXXXXXX X  X X    X X     XXXX X       XXXX X      X  XX     X  XX              X X X       X  X  X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 08:16 - 2 100 500 - 1 128 40 0 30 10 0 img/*base.img - os 100 91 0 ws 100 87 1 - choose_best_ans_ben 0.0
+
+  429 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXXXX X   X  XX        X     XX X   XX    XXX XX     XX       X  X X XXX   X   X       XX X XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  415 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXXX X XXXXX X X    XX X   X X        XXXXX X      X  XX     X XXX  X      X   XX     XX    XX   XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 08:16 - 3 100 500 - 1 128 40 0 30 10 0 img/*base.img - os 100 95 0 ws 100 91 1 - choose_best_ans_ben 0.0
+
+  445 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXX X X X    X X                 X       X   X         X X X    XXX X X XX  X X  X         X  XXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  435 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XX     X XX X XXX    X X   XXX     X  XX XX X     XX  XXX     X  X  X          X  X   X   X XX    X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 08:16 - 3 100 500 - 1 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 95.0 >= 95 - time 9s 88 9 0 0 3
+ script> test img/*base.img
+completed read of 100 image files
+alloced score, size 24 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org            100.0 100.0 100.0
+org_weighted   100.0 100.0 100.0
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0    100.000    100.000     100(0,0.0,0)         0                    0                   
+       1    100.000    100.000     100(0,0.0,0)         0                    0                   
+       2    100.000    100.000     100(0,0.0,0)         0                    0                   
+       3    100.000    100.000     100(0,0.0,0)         0                    0                   
+       4    100.000    100.000     100(0,0.0,0)         0                    0                   
+       6    100.000    100.000     100(0,0.0,0)         0                    0                   
+       7    100.000    100.000     100(0,0.0,0)         0                    0                   
+       8    100.000    100.000     100(0,0.0,0)         0                    0                   
+       9    100.000    100.000     100(0,0.0,0)         0                    0                   
+ script> test img/*var*.img
+completed read of 100 image files
+alloced score, size 24 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org             24.0  24.0  24.0
+org_weighted    11.4  11.4  11.4
+
+SCORE HISTOGRAMS
+----------------
+   10 |                        X                                                                           
+      |                        X                                                                           
+      |                        X                                                                           
+      |                        X                                                                           
+    0 |                        X                                                                           
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |           X                                                                                        
+      |           X                                                                                        
+      |           X                                                                                        
+      |           X                                                                                        
+    0 |           X                                                                                        
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       1     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       2     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       3     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       4     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       6     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       7     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       8     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+       9     11.400     24.000     24(2,5.2,8)          0                    76(3,6.0,9)         
+ script> remark
+ script> 
+ script> remark #######################################
+ script> remark #### STARTING TEST WITH 1000 IMAGES ####
+ script> remark #######################################
+ script> shell rm -rf img; mkdir img; cd img; ../genimg 1000 1
+Creating 1000 base images, each with 1 variation images.
+ script> create 500  128 40 0   30 10 0  img/*base.img
+sizeof pop_t   631 MB
+sizeof score_t 883 MB (for max of 100000 imgaes)
+completed read of 1000 image files
+completed adding images to pop: new=1000 existing=0 skipped=0
+02/18 08:16 - 0 1000 500 - -1 128 40 0 30 10 0 img/*base.img - create successful
+ script> set learn_term_gen_count 15
+ script> learn 0
+Initializing learn for 0 neuron levels
+alloced score, size 33 MB
+
+02/18 08:16 - 0 1000 500 - 0 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 0, term_org_score_avg 95, term_gen_count 15
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 08:17 - 0 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 0 0 0 ws 1 1 1 - choose_best_ans_ben 0.2
+
+  500 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |X                                                                                                   
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  500 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | X                                                                                                  
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 08:17 - 1 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 42 0 0 ws 42 1 1 - choose_best_ans_ben 0.6
+
+  487 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |XX                          X            XX                                                         
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  488 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | X     XX    X              X             X                                                         
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 08:18 - 2 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 6 0 ws 100 4 1 - choose_best_ans_ben 1.8
+
+  459 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |X X   X  X    X         X    X           X    X    X          X     X                 X     X   X  X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  464 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXX X X   X X   X     X      X  X      X   XXX X X    X X                 X      X  X  X  X      X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 08:18 - 3 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 32 0 ws 100 20 1 - choose_best_ans_ben 0.0
+
+  289 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |XXX XXXX X X  XXXXXXX   X   XX XX X X  X XX  XXXX XXXX X   XX  X   XXX  X XXX   XXX  X XX X XXXXX XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  324 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXXXXXXX XXXXX XX X  XX X  XXX      X  X  X XXX XXX X X X   XX XX   XXX X X XX X XXXX  XXXXXX  X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 4 / 4 -------------------------
+
+02/18 08:18 - 4 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 55 0 ws 100 34 1 - choose_best_ans_ben 0.0
+
+  230 |                                                                                                   X
+      |X                                                                                                  X
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |XXXXXXX XX X XXX  X XX  X XXXXXX   XXXXX  X     X  X X  XX XX X  XXXX X   X XX X X X   X  XXXX XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  210 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                 X
+    0 | XXXXXXXXXXX XXXXXXXXXXXX  XX XXXXXXXXXXXXXXX XXXXX XXXXXXXXXXXXXXXXXXXXXXX XXXXXX XXXXXXXXXXXXX X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 5 / 5 -------------------------
+
+02/18 08:19 - 5 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 71 0 ws 100 44 1 
+
+  308 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+    0 |XX X XXXXX XX XXX X  X X      X   X   X   XXXX X  X   XXXX   XXX     XX XX X   X X XXXX XXXXXXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  129 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                 X
+      | X                                                                                                 X
+    0 | XXXXXXXX XXXXX XXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXX XX XXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 6 / 6 -------------------------
+
+02/18 08:19 - 6 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 82 0 ws 100 54 1 
+
+  380 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXX X      XXX X     XX  X     X X    XXXX     X  XX  XX  X        X XXX X   X      XXX  XX  XXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   79 | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                                       X         X
+    0 | XXXXXX XXX  XX X XX  XXXX XXXX XXX XXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 7 / 7 -------------------------
+
+02/18 08:19 - 7 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 90 0 ws 100 62 1 
+
+  417 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XX  XX     X  XX XX      X     X          X  X X  X XX      X     XX XX XXX  XXX X X X XXX  XX  XXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   81 |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+      | X                                                                                       X         X
+    0 | XXXX XXXXXX XX X X X XXX X XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 8 / 8 -------------------------
+
+02/18 08:20 - 8 1000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 96 0 ws 100 70 1 
+
+  465 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |X   X          X                       X  X  X                      X X   X X          XX XXX   XXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   89 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                         X         X
+    0 | X XX  XXX   XX XX  X X   XXXXXXXXX XXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 08:20 - 8 1000 500 - 0 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 96.1 >= 95 - time 189s 90 7 3 0 0
+ script> test img/*base.img
+completed read of 1000 image files
+alloced score, size 25 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org            100.0 100.0 100.0
+org_weighted   100.0 100.0 100.0
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       1    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       2    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       3    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       4    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       6    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       7    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       8    100.000    100.000     1000(0,0.0,0)        0                    0                   
+       9    100.000    100.000     1000(0,0.0,0)        0                    0                   
+ script> test img/*var*.img
+completed read of 1000 image files
+alloced score, size 25 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org             99.0  99.0  99.0
+org_weighted    41.0  41.0  41.0
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                         X                                                          
+      |                                         X                                                          
+      |                                         X                                                          
+      |                                         X                                                          
+    0 |                                         X                                                          
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       1     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       2     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       3     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       4     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       6     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       7     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       8     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+       9     41.036     99.000     990(7,17.7,29)       5(31,31.2,32)        5(20,23.6,27)       
+ script> set learn_term_gen_count 5
+ script> learn 1
+Initializing learn for 1 neuron levels
+alloced score, size 33 MB
+
+02/18 08:20 - 0 1000 500 - 1 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 1, term_org_score_avg 95, term_gen_count 5
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 08:20 - 0 1000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 64 0 ws 99 64 1 - choose_best_ans_ben 64.3
+
+  322 |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |X                                                                                                  X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  322 |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+      | X                                                                                                 X
+    0 | X                                                                                                 X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 08:20 - 1 1000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 77 0 ws 99 75 1 - choose_best_ans_ben 0.0
+
+  354 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXXX XXXX XX XXXXXXX  XXX       XXX  X  X X   X    X     XX  X     X   X  X  XX   X XX XX   XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  351 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+    0 | XXXXXXXX XXX  X X X X X   X  XX X    XX    X  X   XX    X X  X X      XX XX XX X    XX X X X    X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 08:21 - 2 1000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 88 0 ws 99 86 1 - choose_best_ans_ben 0.0
+
+  414 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXX X XXXXX X X  X  X X XX X  XX    XXX    X X      X                     X  X     X     X XXX XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  409 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXX XXX XX X   X XX XXXXX  X  X  X            X    X             X       XX XX XX   X  X XXX  X   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 08:21 - 3 1000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 91 0 ws 99 90 1 - choose_best_ans_ben -0.0
+
+  435 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXXX XX X XX X   XXX   XX        XXX X  X  X             X  X XXX      X  X     X   X   X   XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  428 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXXXX X XX       XX XX XX   X        X   X    X    X  X                  XX XX X    X XX XXX  X   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 4 / 4 -------------------------
+
+02/18 08:21 - 4 1000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 95 0 ws 99 94 1 - choose_best_ans_ben -0.0
+
+  460 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXX   X    X  X XX XX X           X X      X                X                XX            X   XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  455 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XXXX X X X X     X    X X                X         X    X                X  XX X    X  XXXXX  X   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 08:21 - 4 1000 500 - 1 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 95.2 >= 95 - time 101s 97 2 1 0 0
+ script> test img/*base.img
+completed read of 1000 image files
+alloced score, size 25 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org             99.9  99.9  99.9
+org_weighted    99.9  99.9  99.9
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       1     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       2     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       3     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       4     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       6     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       7     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       8     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+       9     99.900     99.900     999(0,0.0,0)         0                    1(0,0.0,0)          
+ script> test img/*var*.img
+completed read of 1000 image files
+alloced score, size 25 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org              9.2   9.2   9.2
+org_weighted     6.2   6.2   6.2
+
+SCORE HISTOGRAMS
+----------------
+   10 |         X                                                                                          
+      |         X                                                                                          
+      |         X                                                                                          
+      |         X                                                                                          
+    0 |         X                                                                                          
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |      X                                                                                             
+      |      X                                                                                             
+      |      X                                                                                             
+      |      X                                                                                             
+    0 |      X                                                                                             
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       1      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       2      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       3      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       4      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       6      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       7      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       8      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+       9      6.220      9.200     92(0,3.2,8)          0                    908(0,3.8,8)        
+ script> remark
+ script> 
+ script> remark #######################################
+ script> remark #### STARTING TEST WITH 10000 IMAGES ####
+ script> remark #######################################
+ script> shell rm -rf img; mkdir img; cd img; ../genimg 10000 1
+Creating 10000 base images, each with 1 variation images.
+ script> create 500  128 40 0   30 10 0  img/*base.img
+sizeof pop_t   631 MB
+sizeof score_t 883 MB (for max of 100000 imgaes)
+completed read of 10000 image files
+completed adding images to pop: new=10000 existing=0 skipped=0
+02/18 08:22 - 0 10000 500 - -1 128 40 0 30 10 0 img/*base.img - create successful
+ script> set learn_term_gen_count 15
+ script> learn 0
+Initializing learn for 0 neuron levels
+alloced score, size 110 MB
+
+02/18 08:22 - 0 10000 500 - 0 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 0, term_org_score_avg 95, term_gen_count 15
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 08:30 - 0 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 0 0 0 ws 1 1 1 - choose_best_ans_ben 0.2
+
+  500 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |X                                                                                                   
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  500 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | X                                                                                                  
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 08:39 - 1 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 42 0 0 ws 42 1 1 - choose_best_ans_ben 0.6
+
+  488 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |X                           X            XX                                                         
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  488 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | X     XX     X             X             X                                                         
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 08:47 - 2 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 86 6 0 ws 86 4 1 - choose_best_ans_ben 1.4
+
+  437 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+    0 |XXX X   XXX XX              X   X           X     X                            X   X  X             
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  448 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXXXX   X XX X     XX X     XX   X   XXX XX X X X  X X          X       X  X   X    X             
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 08:54 - 3 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 29 0 ws 100 18 1 - choose_best_ans_ben 3.0
+
+  327 |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                   
+      |X                                                                                                  X
+    0 |XXX X XXXX X  XX  XX   X        X    X X       X    X    X X     X XX   X       X  X    X X XXX  XXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  347 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXXXXXX X X XXXX  XXXXXX XXXXXX XXXXXXXX    XXXX X XXXX XXXXXXXXX  X      X  XXX XXXXX X X  X XX X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 4 / 4 -------------------------
+
+02/18 09:02 - 4 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 54 0 ws 100 32 1 - choose_best_ans_ben 0.0
+
+  225 |X                                                                                                  X
+      |X                                                                                                  X
+      |X                                                                                                  X
+      |X                                                                                                  X
+    0 |XXXXX X XXXXXX X XX X  X   X          XXXX     X X X X X X X    X  XX X XXX XX  X XXX X XXX  X XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  216 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+    0 | XXXXXXXXXXXX X  XXXXXXXXXXX XXX X XXXXXXXXXXXXXXXXXXXXXX XXXXXX XXX XXXXXXXX  XX XXXXXXXXXX XXXXX X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 5 / 5 -------------------------
+
+02/18 09:07 - 5 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 70 0 ws 100 43 1 
+
+  300 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+    0 |XXXX XXXXX XXX XXX   X X X X        XXX  X   X XXX X    X XXX      XX      XXX X XXX X X X  XXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  137 | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                  
+      | X                                                                                                 X
+    0 | XXXXXXX XXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXX   XXXXXXXXXXXXX X XXXXXXXXXXX XXXXXXXXXXXXXXXXXX  XXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 6 / 6 -------------------------
+
+02/18 09:11 - 6 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 80 0 ws 100 53 1 
+
+  362 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXX XXXXX  X X      X XX      X  XX  X   XX  X  XX     XX   X X     X     XX    X XXX X XX XXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   87 | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                                                 X
+      | X                                                                                                 X
+    0 | XXXXXXXX XXXX XXXX X XXXXXXXXXXXXXXXX XXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX XXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 7 / 7 -------------------------
+
+02/18 09:15 - 7 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 90 0 ws 100 63 1 
+
+  420 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |X   XXXX  X      X  X  XXX      X   X           XXXX  X   XX    X  X  XX       X   XXXXXXXXXXX XXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   87 |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+      | X                                                                                                 X
+    0 | XX XXXXX XXXXXXXX XXXXX X XXXXXXXXXXXXXXX XXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 8 / 8 -------------------------
+
+02/18 09:20 - 8 10000 500 - 0 128 40 0 30 10 0 img/*base.img - os 100 96 0 ws 100 73 1 
+
+  462 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |X XX X                    XX              X X    X         X         XXX     XXX   X XX X X X X  XXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  123 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | X XX XXXXXXXX XXX  XXXXXXXXXXXXXXXXXXXXXX XXXXX XX XXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 09:20 - 8 10000 500 - 0 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 96.7 >= 95 - time 3491s 49 38 14 0 0
+ script> test img/*base.img
+completed read of 10000 image files
+alloced score, size 26 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org            100.0 100.0 100.0
+org_weighted   100.0 100.0 100.0
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       1    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       2    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       3    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       4    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       6    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       7    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       8    100.000    100.000     10000(0,0.0,0)       0                    0                   
+       9    100.000    100.000     10000(0,0.0,0)       0                    0                   
+ script> test img/*var*.img
+completed read of 10000 image files
+alloced score, size 26 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org             97.7  97.7  97.7
+org_weighted    41.4  41.4  41.4
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                 X  
+      |                                                                                                 X  
+      |                                                                                                 X  
+      |                                                                                                 X  
+    0 |                                                                                                 X  
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                         X                                                          
+      |                                         X                                                          
+      |                                         X                                                          
+      |                                         X                                                          
+    0 |                                         X                                                          
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       1     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       2     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       3     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       4     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       6     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       7     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       8     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+       9     41.355     97.710     9771(4,17.4,30)      4(31,31.2,32)        225(11,23.6,30)     
+ script> set learn_term_gen_count 5
+ script> learn 1
+Initializing learn for 1 neuron levels
+alloced score, size 110 MB
+
+02/18 09:20 - 0 10000 500 - 1 128 40 0 30 10 0 img/*base.img - learn starting - neuron_lvl 1, term_org_score_avg 95, term_gen_count 5
+
+------------------------- GEN NUM / COUNT : 0 / 0 -------------------------
+
+02/18 09:23 - 0 10000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 76 0 ws 99 76 1 - choose_best_ans_ben 76.0
+
+  383 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |X                                                                                                  X
+    0 |X                                                                                                  X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  383 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      | X                                                                                                 X
+    0 | X                                                                                                 X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 1 / 1 -------------------------
+
+02/18 09:27 - 1 10000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 81 0 ws 99 81 1 - choose_best_ans_ben 0.0
+
+  397 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXXXXXXX      XX   X   X  X   XXX X  X               X           XX       X X  X X  XX     XX   X XX
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  397 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XX X  X     X  XXX     XX    X  X       X  X     X     X XX      XX    X       X  X     X       X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 2 / 2 -------------------------
+
+02/18 09:31 - 2 10000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 88 0 ws 99 88 1 - choose_best_ans_ben -0.0
+
+  434 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |XXX XXX X     X         X  X  X   X         X      X     XX      X      X   X   XX         XX      X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  434 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XX X   X     X X X X           X    X     X       X X   XX       X              XX    X           X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 3 / 3 -------------------------
+
+02/18 09:35 - 3 10000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 93 0 ws 99 93 1 - choose_best_ans_ben -0.0
+
+  462 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |X   XX              X   X           X       X  X               X X      X  X   XX X        XX    X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  462 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | XX       X       X  X     X         X    X  X X    X    X      X X    X           X   X       X   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+
+------------------------- GEN NUM / COUNT : 4 / 4 -------------------------
+
+02/18 09:38 - 4 10000 500 - 1 128 40 0 30 10 0 img/*base.img - os 99 97 0 ws 99 96 1 - choose_best_ans_ben -0.0
+
+  479 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |X X X            X                  X       X           X   X            X    XX            X    X X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+  479 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 | X         X         X              XX   X         X    X              X           X           X   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+02/18 09:38 - 4 10000 500 - 1 128 40 0 30 10 0 img/*base.img - learn completed - org_score_avg 97.2 >= 95 - time 1099s 88 10 2 0 0
+ script> test img/*base.img
+completed read of 10000 image files
+alloced score, size 26 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org             99.1  99.1  99.1
+org_weighted    99.1  99.1  99.1
+
+SCORE HISTOGRAMS
+----------------
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+      |                                                                                                   X
+    0 |                                                                                                   X
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       1     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       2     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       3     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       4     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       6     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       7     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       8     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+       9     99.060     99.060     9906(0,0.0,0)        0                    94(0,0.0,0)         
+ script> test img/*var*.img
+completed read of 10000 image files
+alloced score, size 26 MB
+SCORE            MAX   AVG   MIN
+-----            ---   ---   ---
+org              3.3   3.3   3.3
+org_weighted     2.5   2.5   2.5
+
+SCORE HISTOGRAMS
+----------------
+   10 |   X                                                                                                
+      |   X                                                                                                
+      |   X                                                                                                
+      |   X                                                                                                
+    0 |   X                                                                                                
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_SCORE                                               100
+
+   10 |  X                                                                                                 
+      |  X                                                                                                 
+      |  X                                                                                                 
+      |  X                                                                                                 
+    0 |  X                                                                                                 
+      +----------------------------------------------------------------------------------------------------
+      0                                         ORG_WEIGHTED_SCORE                                      100
+
+ ORG_IDX     WSCORE     SCORE      CORRECT              DONT_KNOW            INCORRECT
+ -------     ------     -----      -------              ---------            ---------
+       0      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       1      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       2      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       3      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       4      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       6      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       7      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       8      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+       9      2.480      3.290     329(0,2.5,9)         0                    9671(0,2.7,7)       
+ script> remark
+ script> 
+ script> remark ##############
+ script> remark #### DONE ####
+ script> remark ##############
+script script terminating
+> 
+> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> [K> 
+> 
+> 
+> 
+> 
+> 
+> 
