@@ -3,7 +3,7 @@ all: ga genimg catimg
 # consider -march=native
 
 ga: ga.c 
-	gcc -march=native -O3 -Wall -fsigned-char -g -pthread -lrt -lm -lz -lreadline -o ga ga.c 
+	gcc -march=native -O3 -Wall -fsigned-char -g -pthread -lrt -lm -lz -lreadline -o ga ga.c -lreadline -lz
 
 genimg: genimg.c
 	gcc -Wall -g -o genimg genimg.c 
